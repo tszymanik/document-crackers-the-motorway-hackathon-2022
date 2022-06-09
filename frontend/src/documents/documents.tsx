@@ -2,28 +2,25 @@
 // @ts-nocheck
 import React, {useState} from 'react';
 import DocumentUpload from './documentUpload/documentUpload';
+import DocumentDisplay from "./documentDisplay/documentDisplay";
 
 
 const Documents = () => {
     const [documentState, setDocumentState] = useState([]);
 
-    const handleFileChange : any = (event) => {
-        const documentArray = documentState;
+    const addDocument = (fileName: string, base64: string) => {
         const uploadedDocument = {
-            file: event.target.files[0],
-            imageUrl: URL.createObjectURL(event.target.files[0]),
+            fileName, base64
         };
-
-        documentArray.push(uploadedDocument);
-        
-        setDocumentState([...documentArray]);
+        setDocumentState([...documentState, uploadedDocument])
     }
 
     return (
         <div>
             <h4> Document upload </h4>
             <span> documents go here </span>
-            <DocumentUpload handleFileChange={handleFileChange} documents={documentState}> </DocumentUpload>
+            <DocumentUpload addDocument={addDocument}/>
+            <DocumentDisplay documents={documentState} />
         </div>
     )
 }

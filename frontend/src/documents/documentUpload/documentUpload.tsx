@@ -1,7 +1,8 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './documentUpload.module.scss';
+import CropImageModal from "../../cropImageModal/CropImageModal";
 
 const FileInput = React.forwardRef((props, ref: any) => {
     const {
@@ -38,12 +39,28 @@ const renderImages = (documents) => {
 }
 
 const DocumentUpload = (props) => {
-    const { handleFileChange, documents } = props;
+    const [currentFile, setCurrentFile] = useState(undefined)
     return (
-        <form>
-            <FileInput handleFileChange={ (e) => { handleFileChange(e)}} id="uploadButton" />
-            <div>{documents.length && renderImages(documents)}</div>
-        </form>
+        <>
+            <form>
+                <FileInput
+                    handleFileChange={ (e) => {
+                        setCurrentFile(e.target.files[0])
+                    }}
+                    id="uploadButton"
+                />
+            </form>
+            {currentFile && (
+                <CropImageModal
+                    src={URL.createObjectURL(currentFile)}
+                    image={currentFile}
+                    applyCrop={(bases64: any) => {
+                        props.addDocument('name.jpg', bases64)
+                        setCurrentFile(undefined); // will close modal
+                    }}
+                />
+            )}
+        </>
     )
 }
 
