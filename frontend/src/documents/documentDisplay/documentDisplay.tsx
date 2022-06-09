@@ -9,10 +9,10 @@ interface IDocumentDisplayProps {
 const DocumentDisplay = ({ documents }: IDocumentDisplayProps) => {
     if (!documents || !documents.length) return null
     return (
-        <div>
-            {documents.map((item: IDocument) => (
-                <div className={styles.documentImages} key={item.base64}>
-                    <img src={item.base64} alt={item.base64}/>
+        <div className={styles.documentImages}>
+            {documents.map((item) => (
+                <div key={item.base64}>
+                    <img src={item.base64} alt={item.base64}></img>
                 </div>
             ))}
         </div>

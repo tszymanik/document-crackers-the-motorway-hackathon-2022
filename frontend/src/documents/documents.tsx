@@ -14,7 +14,6 @@ const Documents = () => {
     return (
         <div>
             <h4> Document upload </h4>
-            <span> documents go here </span>
             <DocumentUpload addDocument={addDocument}/>
             <DocumentDisplay documents={documentState} />
         </div>
