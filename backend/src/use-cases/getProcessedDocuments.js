@@ -23,7 +23,7 @@ const listProcessedDocuments = async () => {
     const objectsData = processedObjectList.Contents.splice(1).map((obj) => obj.Key)
 
     const ret = imagesData.map((image) => {
-        const dataFileName = image.replace('.','-') + '.json';
+        const dataFileName = image.replace('.','-').replace('images/', 'images-data/') + '.json';
         const dataId = objectsData.includes(dataFileName) ? dataFileName : null;
 
         return {
