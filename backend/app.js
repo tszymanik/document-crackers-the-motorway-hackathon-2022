@@ -14,11 +14,11 @@ app.post('/v5c', async (req, res) => {
         return res.json(returnPostV5c());
     }
     try {
-        await uploadDocument(req.body);
-        res.sendStatus(200);
+        const processedImages = await uploadDocument(req.body);
+        res.send(processedImages);
     } catch (e) {
         console.log('There was an error uploading file!', e);
-        res.sendStatus(500);
+        res.status(500).send(e);
     }
 })
 
@@ -31,7 +31,7 @@ app.get('/v5c/:id', async (req, res) => {
         res.send(await getProcessedDocument(req.params.id));
     } catch (e) {
         console.log('There was a problem fetching filename', e);
-        res.sendStatus(404);
+        res.status(404).send(e);
     }
 });
 
@@ -44,7 +44,7 @@ app.get('/v5c', async (req, res) => {
         res.send(await listProcessedDocuments());
     } catch (e) {
         console.log('There was a problem listing files', e);
-        res.sendStatus(500);
+        res.status(500).send(e);
     }
 })
 
