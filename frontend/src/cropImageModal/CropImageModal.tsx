@@ -1,6 +1,5 @@
 import React, {useState, ChangeEvent, useRef, useEffect} from 'react';
 import ReactCrop, {Crop} from 'react-image-crop'
-import 'react-image-crop/dist/ReactCrop.css'
 import styles from './CropImageModal.module.scss';
 import {blobToBase64, getCroppedImgBlob} from "./cropImageHelper";
 
