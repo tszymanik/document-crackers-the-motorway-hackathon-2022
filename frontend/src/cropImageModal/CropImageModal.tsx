@@ -51,7 +51,7 @@ const CropImageModal = (props: ICropImageProps) => {
                         // onLoad={onImageLoad}
                     />
                 </ReactCrop>
-                <button className={styles.button} onClick={apply}>apply</button>
+                <button className={styles.button} onClick={apply}>Apply</button>
             </div>
         </div>
     )
