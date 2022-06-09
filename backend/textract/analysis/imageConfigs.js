@@ -141,6 +141,26 @@ const firstV5ImageConfigPage2 = {
 const firstV5ImageConfigPage3 = {
   kind: 'v5',
   page: 3,
+  known: {
+    leftTop: {
+      text: 'Change my name and',
+      x: 0.06143994256854057,
+      y: 0.05059489980340004,
+      polygonIndex: 0,
+    },
+    leftBottom: {
+      text: '5 Permanently exporting this vehicle',
+      x: 0.04759446904063225,
+      y: 0.5496215224266052,
+      polygonIndex: 0,
+    },
+    rightBottom: {
+      text: 'must be given to the new keeper',
+      x: 0.5427743792533875,
+      y: 0.6962155103683472,
+      polygonIndex: 1,
+    },
+  },
   staticValues: [
     {
       text: 'Change my name and',
@@ -350,6 +370,26 @@ const secondV5ImageConfigPage2 = {
 const secondV5ImageConfigPage3 = {
   kind: 'v5',
   page: 3,
+  known: {
+    leftTop: {
+      text: 'Change my name and',
+      x: 0.1456163376569748,
+      y: 0.12513107061386108,
+      polygonIndex: 0,
+    },
+    leftBottom: {
+      text: '5 Permanently exporting this vehicle',
+      x: 0.17171885073184967,
+      y: 0.5407677888870239,
+      polygonIndex: 0,
+    },
+    rightBottom: {
+      text: 'must be given to the new keeper',
+      x: 0.5651502013206482,
+      y: 0.6636675000190735,
+      polygonIndex: 1,
+    },
+  },
   staticValues: [
     {
       text: '3 Change my name and',
@@ -562,6 +602,26 @@ const thirdV5ImageConfigPage2 = {
 const thirdV5ImageConfigPage3 = {
   kind: 'v5',
   page: 3,
+  known: {
+    leftTop: {
+      text: 'Change my name and',
+      x: 0.24977925419807434,
+      y: 0.11048144102096558,
+      polygonIndex: 0,
+    },
+    leftBottom: {
+      text: '5 Permanently exporting this vehicle',
+      x: 0.16526830196380615,
+      y: 0.5003858804702759,
+      polygonIndex: 0,
+    },
+    rightBottom: {
+      text: 'must be given to the new keeper',
+      x: 0.5225069522857666,
+      y: 0.6647220849990845,
+      polygonIndex: 1,
+    },
+  },
   staticValues: [
     {
       text: '3 Change my name and',
