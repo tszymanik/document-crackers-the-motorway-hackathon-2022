@@ -1,5 +1,3 @@
-require('dotenv-defaults/config');
-
 const { S3 } = require('aws-sdk');
 const s3 = new S3({
   accessKeyId: process.env.AWS_ACCESS_KEY,
