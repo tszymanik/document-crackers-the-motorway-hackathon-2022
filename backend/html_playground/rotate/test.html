@@ -1,0 +1,653 @@
+<html>
+<head>
+    <style>
+
+        .main {
+            display: flex;
+        }
+        .main-item {
+            border: 1px grey;
+            position: relative;
+        }
+        .backimage {
+            width: 400px;
+        }
+
+
+        .dot {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            /*border: 1px solid #aaa; !*To show the boundaries of the element*!*/
+        }
+        .dot:before {
+            position: absolute;
+            content: '';
+            background-color:#FF0000;
+            border-radius:50%;
+            opacity:0.5;
+            width: 4px;
+            height: 4px;
+            pointer-events: none;
+        }
+
+        .box {
+            color: #00bc80;
+            /*clip-path:polygon(0 0, 100% 35%, 100% 65%, 0% 100%);*/
+            background: rgba(224, 230, 229, 0.5);
+            position: absolute;
+        }
+        .box-red {
+            /*clip-path:polygon(0 0, 100% 35%, 100% 65%, 0% 100%);*/
+            /*background:red;*/
+            background: rgba(224, 0, 0, 0.5);
+            color: #1B7FDD;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+<div id="normalDiv" class="main-item">
+    <img id="normalImgId" src="TEST_V5_P2.jpg" class="backimage">
+
+</div>
+<div id="rotatedDiv" class="main-item">
+    <img id="rotatedImgId" src="TEST_V5_P2_rotated_20.jpg" class="backimage">
+</div>
+</div>
+<script>
+
+  // const locations = [
+  //   {
+  //     "X": 0.23997123539447784,
+  //     "Y": 0
+  //   },
+  //   {
+  //     "X": 1,
+  //     "Y": 0.0858125388622284
+  //   },
+  //   {
+  //     "X": 0.7706992030143738,
+  //     "Y": 1
+  //   },
+  //   {
+  //     "X": 0,
+  //     "Y": 0.9073250889778137
+  //   }
+  // ];
+const normalPoints = [
+  [
+    {
+      "BlockType": "LINE",
+      "Confidence": 99.79118347167969,
+      "Text": "Vehicle details",
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.15806613862514496,
+          "Height": 0.012646126560866833,
+          "Left": 0.03163459151983261,
+          "Top": 0.004410078749060631
+        },
+        "Polygon": [
+          {
+            "X": 0.03163459151983261,
+            "Y": 0.004410078749060631
+          },
+          {
+            "X": 0.1895434409379959,
+            "Y": 0.005290762521326542
+          },
+          {
+            "X": 0.18970073759555817,
+            "Y": 0.017056206241250038
+          },
+          {
+            "X": 0.03187156096100807,
+            "Y": 0.016204828396439552
+          }
+        ]
+      },
+      "Id": "9e93c6bc-91bd-44c2-8565-03fa23cdd055",
+      "Relationships": [
+        {
+          "Type": "CHILD",
+          "Ids": [
+            "aa93f929-99a3-4c16-b496-15c51572c204",
+            "adbe260c-3456-4959-b8ac-03fe0fd0faca"
+          ]
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "BlockType": "LINE",
+      "Confidence": 99.05684661865234,
+      "Text": "D.1: Make HYUNDAI",
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.12106963992118835,
+          "Height": 0.011015653610229492,
+          "Left": 0.11185116320848465,
+          "Top": 0.09032164514064789
+        },
+        "Polygon": [
+          {
+            "X": 0.11185116320848465,
+            "Y": 0.09032164514064789
+          },
+          {
+            "X": 0.23279930651187897,
+            "Y": 0.09083572030067444
+          },
+          {
+            "X": 0.2329208105802536,
+            "Y": 0.10133729875087738
+          },
+          {
+            "X": 0.11202726513147354,
+            "Y": 0.10084321349859238
+          }
+        ]
+      },
+      "Id": "b3c306dc-030c-43dc-b996-9c81365c2f04",
+      "Relationships": [
+        {
+          "Type": "CHILD",
+          "Ids": [
+            "060b6ffc-6302-4bc5-a0a0-777a47b0db5f",
+            "833cecf9-c699-4c78-8fb4-bbdd7ac1a648",
+            "b2a2ae99-ec79-4f05-a18c-596edb0b9263"
+          ]
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "BlockType": "LINE",
+      "Confidence": 99.3179702758789,
+      "Text": "Euro status",
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.05730012059211731,
+          "Height": 0.00818613450974226,
+          "Left": 0.11042876541614532,
+          "Top": 0.1662570834159851
+        },
+        "Polygon": [
+          {
+            "X": 0.11042876541614532,
+            "Y": 0.1662570834159851
+          },
+          {
+            "X": 0.16761352121829987,
+            "Y": 0.1664327085018158
+          },
+          {
+            "X": 0.16772888600826263,
+            "Y": 0.17444321513175964
+          },
+          {
+            "X": 0.11056388169527054,
+            "Y": 0.1742747575044632
+          }
+        ]
+      },
+      "Id": "9fb6d2de-2983-47de-9e70-65fbb428b108",
+      "Relationships": [
+        {
+          "Type": "CHILD",
+          "Ids": [
+            "dae10b00-f31c-4e6a-bb4c-ab3088518b2b",
+            "954921f0-07d4-4fa3-bc75-d13e0cbf1795"
+          ]
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "BlockType": "LINE",
+      "Confidence": 98.5671615600586,
+      "Text": "Change my vehicle details - Only fill in details to be corrected or changed",
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.5768307447433472,
+          "Height": 0.016352439299225807,
+          "Left": 0.05151500552892685,
+          "Top": 0.42045798897743225
+        },
+        "Polygon": [
+          {
+            "X": 0.05151500552892685,
+            "Y": 0.4209668040275574
+          },
+          {
+            "X": 0.628345787525177,
+            "Y": 0.42045798897743225
+          },
+          {
+            "X": 0.6282608509063721,
+            "Y": 0.43616029620170593
+          },
+          {
+            "X": 0.05182541534304619,
+            "Y": 0.4368104338645935
+          }
+        ]
+      },
+      "Id": "01d11a53-a23b-4046-a30c-9ab601e799a2",
+      "Relationships": [
+        {
+          "Type": "CHILD",
+          "Ids": [
+            "77e50c66-4621-4a92-bca2-393a2d9fb52f",
+            "01c07462-fa25-44bd-95e3-6ee4c32fa3a4",
+            "15a0de2e-03f9-4383-95d5-1574a53c42db",
+            "7140b5c2-4285-4f2a-987c-ee784509ef0c",
+            "ad2d536f-9d5d-4927-9cce-a13e5d157dd4",
+            "8fdd6294-5055-47d0-a284-a86d43fb710b",
+            "118902db-af1d-41d7-b933-80d46d1c0340",
+            "ee1e37a6-755a-4189-87b5-0445254a7d04",
+            "096a9399-95c6-4676-8c0f-70801cb1d0ee",
+            "990a5c53-60ce-4901-8144-ac2581b62d94",
+            "4a86cdcd-1b71-400c-b4b3-229a8b3d62f4",
+            "ff1bf6fb-4ca2-4a95-a29a-b9bbf2dd4d59",
+            "105a44f8-0cda-4ff8-bbd4-852bc09f4922",
+            "bd44e5cb-88f1-490f-a882-03519951f011"
+          ]
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "BlockType": "LINE",
+      "Confidence": 99.67430877685547,
+      "Text": "2 Selling or transferring my vehicle to a new keeper (not a trader)",
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.599449872970581,
+          "Height": 0.019398348405957222,
+          "Left": 0.036886028945446014,
+          "Top": 0.6207606792449951
+        },
+        "Polygon": [
+          {
+            "X": 0.036886028945446014,
+            "Y": 0.6231689453125
+          },
+          {
+            "X": 0.6363359093666077,
+            "Y": 0.6207606792449951
+          },
+          {
+            "X": 0.636238157749176,
+            "Y": 0.6375947594642639
+          },
+          {
+            "X": 0.03723270818591118,
+            "Y": 0.640159010887146
+          }
+        ]
+      },
+      "Id": "42bcb859-b9ad-44eb-9bd9-b64161b3e562",
+      "Relationships": [
+        {
+          "Type": "CHILD",
+          "Ids": [
+            "4a066e46-4640-4792-a8e1-c3692286b494",
+            "0c17bbf7-58a6-4cd4-bdc2-dad4376a2ffc",
+            "f2f83faa-8f07-4884-a02e-d42aedd1fb53",
+            "9937a5a5-2c1d-4e80-a3ea-f6f6cd1acbff",
+            "3cad8d80-df37-49c7-be82-9f8ebd4b41d0",
+            "5ced9c3e-f557-40c8-a41a-fc5dc6ce1437",
+            "42c8bc97-235b-4abe-89dc-5aee99d3f9ca",
+            "94b83b06-f4ba-4933-afc0-f650c1bd324c",
+            "b108c733-01c4-4016-82b0-937d74d7b18b",
+            "88687fbc-5d11-4b32-bca9-017bc2a1a795",
+            "b038003f-df94-4ff1-9f01-207baf736aed",
+            "fdc16735-baff-4ab1-b015-fababfea6c9d",
+            "bc5a6e42-7e0b-4187-8b1d-1632fbc430d9"
+          ]
+        }
+      ]
+    }
+  ]
+];
+const rotatedPoints = [
+  [
+    {
+      "BlockType": "LINE",
+      "Confidence": 99.75960540771484,
+      "Text": "Vehicle details",
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.11217020452022552,
+          "Height": 0.04459528252482414,
+          "Left": 0.34231361746788025,
+          "Top": 0.008413820527493954
+        },
+        "Polygon": [
+          {
+            "X": 0.34706830978393555,
+            "Y": 0.008413820527493954
+          },
+          {
+            "X": 0.4544838070869446,
+            "Y": 0.04100204259157181
+          },
+          {
+            "X": 0.4497290849685669,
+            "Y": 0.05300910025835037
+          },
+          {
+            "X": 0.34231361746788025,
+            "Y": 0.020420879125595093
+          }
+        ]
+      },
+      "Id": "c48e6d0b-9097-416e-b26b-4621fbf3b22d",
+      "Relationships": [
+        {
+          "Type": "CHILD",
+          "Ids": [
+            "7a71fdf1-e4d8-405b-b0a8-dd6ca168a140",
+            "3751aeeb-c9c3-427b-b6c4-318e85e8318b"
+          ]
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "BlockType": "LINE",
+      "Confidence": 98.01713562011719,
+      "Text": "D.1: Make HYUNDAI",
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.08550786226987839,
+          "Height": 0.032884515821933746,
+          "Left": 0.3686576187610626,
+          "Top": 0.09590855985879898
+        },
+        "Polygon": [
+          {
+            "X": 0.3717823028564453,
+            "Y": 0.09590855985879898
+          },
+          {
+            "X": 0.4541654884815216,
+            "Y": 0.12090236693620682
+          },
+          {
+            "X": 0.4510408341884613,
+            "Y": 0.12879307568073273
+          },
+          {
+            "X": 0.3686576187610626,
+            "Y": 0.1037992611527443
+          }
+        ]
+      },
+      "Id": "28b3f4b9-a566-4e57-a543-30115019ed26",
+      "Relationships": [
+        {
+          "Type": "CHILD",
+          "Ids": [
+            "3ae32641-4dd8-4d26-a889-0af1c44b65cb",
+            "5ede7e24-aeea-4d2b-8dde-68ab312ce836",
+            "8cdb67b4-340a-4ac1-8c3e-66d0b74d045e"
+          ]
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "BlockType": "LINE",
+      "Confidence": 99.58998107910156,
+      "Text": "Euro status",
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.04122563824057579,
+          "Height": 0.01856745034456253,
+          "Left": 0.34381070733070374,
+          "Top": 0.15435223281383514
+        },
+        "Polygon": [
+          {
+            "X": 0.3465381860733032,
+            "Y": 0.15435223281383514
+          },
+          {
+            "X": 0.3850363492965698,
+            "Y": 0.16603198647499084
+          },
+          {
+            "X": 0.38230884075164795,
+            "Y": 0.17291969060897827
+          },
+          {
+            "X": 0.34381070733070374,
+            "Y": 0.16123993694782257
+          }
+        ]
+      },
+      "Id": "706eb347-8873-47c5-ad20-3c1b2a4160f4",
+      "Relationships": [
+        {
+          "Type": "CHILD",
+          "Ids": [
+            "f52ba893-6bcc-40b5-bdf8-5a822f797ba6",
+            "04d54128-e842-446c-99ab-49586a935328"
+          ]
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "BlockType": "LINE",
+      "Confidence": 97.5864028930664,
+      "Text": "Change my vehicle details - Only fill in",
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.23921900987625122,
+          "Height": 0.08439332991838455,
+          "Left": 0.21847665309906006,
+          "Top": 0.34219950437545776
+        },
+        "Polygon": [
+          {
+            "X": 0.22379545867443085,
+            "Y": 0.34219950437545776
+          },
+          {
+            "X": 0.4576956629753113,
+            "Y": 0.4131612479686737
+          },
+          {
+            "X": 0.4523768424987793,
+            "Y": 0.4265928268432617
+          },
+          {
+            "X": 0.21847665309906006,
+            "Y": 0.3556310832500458
+          }
+        ]
+      },
+      "Id": "464a63a0-ed2a-48f0-92ed-b30f727089cb",
+      "Relationships": [
+        {
+          "Type": "CHILD",
+          "Ids": [
+            "da3c852f-3ba8-424b-80ab-08674478da25",
+            "f661cc6e-78c2-499f-b525-184c810b4267",
+            "6a79c85e-3350-4814-a6a5-f4602f0d111c",
+            "dbf414fa-1b3d-42b4-af2e-15810afba559",
+            "fe8bebe0-8212-4363-87b6-3ee3bdcdd8a1",
+            "575356c6-21a6-4628-bc92-203358f6b9bb",
+            "434e2d4c-4f0d-4ecf-b58c-e77336ac5b05",
+            "0915a5fd-585c-41a2-a030-dc89a0f96901"
+          ]
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "BlockType": "LINE",
+      "Confidence": 99.4963150024414,
+      "Text": "Selling or transferring my vehicle to a new keeper (not a",
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.3607024848461151,
+          "Height": 0.12056209146976471,
+          "Left": 0.1606999784708023,
+          "Top": 0.5047220587730408
+        },
+        "Polygon": [
+          {
+            "X": 0.16570939123630524,
+            "Y": 0.5047220587730408
+          },
+          {
+            "X": 0.5214024782180786,
+            "Y": 0.6126338839530945
+          },
+          {
+            "X": 0.5163930654525757,
+            "Y": 0.6252841353416443
+          },
+          {
+            "X": 0.1606999784708023,
+            "Y": 0.5173722505569458
+          }
+        ]
+      },
+      "Id": "a3786fa6-8c85-4f72-ab94-219029db740b",
+      "Relationships": [
+        {
+          "Type": "CHILD",
+          "Ids": [
+            "0ecc034e-659e-4293-abe1-f4898d1b2b57",
+            "953540ff-a8fb-4ef3-a857-8d65ed39cad9",
+            "045005a0-6ddd-4b54-8471-b9dc4a718ae8",
+            "24aa3c09-9053-45e2-aad2-cdfcfca1f3e1",
+            "658e2f7d-7032-4662-ba55-39135409e861",
+            "40dcc687-14f8-4999-a0af-8a70382eb79a",
+            "6c82a875-bc08-49cb-8c94-4e7e90746cd4",
+            "e82d6083-d10f-4e22-b93e-31feed1dca37",
+            "516a0819-e8c8-4eaa-87ee-918eb49be692",
+            "24e8aad0-693b-4426-8550-8ce982920740",
+            "23e6eb91-c628-407f-9f70-427c34367846"
+          ]
+        }
+      ]
+    }
+  ]
+];
+  const findText = (content, type, text) => {
+    return content.Blocks.filter((item) =>
+      item.BlockType === type && item.text.startsWith(text)
+    )
+
+  }
+  // ch1.innerText = 'ch1';
+  // locations.forEach(item => {
+  //   const ch1 = document.createElement('div');
+  //   ch1.className = 'dot';
+  //   ch1.style.left = item.X * 400;
+  //   ch1.style.top = item.Y * 400;
+  //   contentDiv.appendChild(ch1);
+  //
+  //   console.log({item, ch1});
+  //   console.log('end');
+  // })
+
+
+
+  // normalPoints.forEach(np => {
+  //  processPoint(normalDiv, np[0], 'box')
+  // });
+  // //
+  // rotatedPoints.forEach(np => {
+  //  processPoint(rotatedDiv, np[0], 'box-red')
+  // });
+  //
+
+  const normalDiv = document.getElementById('normalDiv');
+  const rotatedDiv = document.getElementById('rotatedDiv');
+
+  const floatToPersent = (f) => (100 * f.toFixed(4));
+  const fToPx = (f) => f.toFixed(2) + 'px';
+  const generateClipPath = (polygon) => {
+    const points = polygon.map(({X,Y})=> `${floatToPersent(X)}% ${floatToPersent(Y)}%`);
+    return `polygon(${points.join(', ')})`;
+  };
+
+  const pxTof = (px) => Number.parseFloat(px);
+  const processDiv = (divId, imgId, className, points) => {
+    const img = document.getElementById(imgId);
+    const imgStyles = window.getComputedStyle(img);
+    console.log('imgae', { img, imgStyles } );
+    const iw = imgStyles.width;
+    const ih = imgStyles.height;
+    console.log({iw, ih});
+    const div = document.getElementById(divId);
+    const w = pxTof(imgStyles.width);
+    const h = pxTof(imgStyles.height);
+    console.log('w & h', {w, h});
+    const boundingBoxToCss = (box) => {
+      return {
+        width: fToPx(w),
+        height: fToPx(h),
+        left: fToPx(0),
+        top: fToPx(0),
+        // width: fToPx(box.Width * w),
+        // height: fToPx(box.Height * w),
+        // left: fToPx(box.Left * w),
+        // top: fToPx(box.Top * w),
+      };
+    };
+
+    const createElement = (styles, defaultClass, text='') => {
+      const ch1 = document.createElement('div');
+      ch1.className = defaultClass;
+      // ch1.innerText = text;
+      Object.assign (ch1.style, styles);
+      return ch1;
+    }
+
+    const processPoint = (target, point, defaultClass) => {
+      const polygonCP = generateClipPath(point.Geometry.Polygon);
+      const positionCss = boundingBoxToCss(point.Geometry.BoundingBox);
+      const text = point.Text;
+      const css = {
+        ...positionCss,
+        'clip-path': polygonCP,
+      };
+
+      console.log(css);
+      const dElement = createElement(css, defaultClass, text);
+      target.appendChild(dElement);
+    }
+    points.forEach(np => {
+      processPoint(div, np[0], className)
+    });
+
+  }
+
+  setTimeout(() => {
+    processDiv('normalDiv', 'normalImgId', 'box', normalPoints);
+    processDiv('rotatedDiv', 'rotatedImgId', 'box-red', rotatedPoints);
+
+  }, 100);
+
+</script>
+
+</body>
+</html>

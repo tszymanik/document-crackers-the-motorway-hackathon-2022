@@ -1,5 +1,3 @@
-@import "../mixins";
-
 .modal {
     position: fixed;
     height: 100vh;
@@ -25,7 +23,7 @@
         left: 10vw;
         height: 40vh;
         width: 80vw;
-        background-color: white;
+        background-color: #999999;
         z-index: 3;
     }
 
