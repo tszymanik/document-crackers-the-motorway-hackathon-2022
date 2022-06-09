@@ -6,7 +6,7 @@ import {blobToBase64, getCroppedImgBlob} from "./cropImageHelper";
 interface ICropImageProps {
     src: string;
     image: any;
-    applyCrop: (base64Image: string) => void
+    applyCrop: (base64Image: string, fileName?: string) => void
 }
 
 const defaultCrop: Crop = {
@@ -26,6 +26,7 @@ const CropImageModal = (props: ICropImageProps) => {
         const img = document.getElementsByTagName("img")[0];
         const tempImg = new Image();
         tempImg.src = img.getAttribute('src') as string
+        const fileName = `image-${new Date().getTime()}.jpg`
 
         getCroppedImgBlob(
             img,
@@ -36,11 +37,11 @@ const CropImageModal = (props: ICropImageProps) => {
                 height: crop.height / 100 * tempImg.height,
                 unit: 'px'
             },
-            `image-${new Date().getTime()}.jpg`
+            fileName
         ).then((blob: any) => {
             blobToBase64(blob)
                 .then((base64: string) => {
-                    props.applyCrop(base64)
+                    props.applyCrop(base64, fileName)
                 })
         })
     }
