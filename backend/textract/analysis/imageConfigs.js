@@ -55,22 +55,22 @@ const v5ImageConfigPage2 = {
   ],
   dynamicValues: [
     {
-      fieldName: 'WVWZZZ6RZCY258332',
+      fieldName: 'vin',
       left: 0.5917980074882507,
       top: 0.09634590893983841,
     },
     {
-      fieldName: 'LB59 WCC',
+      fieldName: 'vrm',
       left: 0.3427649736404419,
       top: 0.08099092543125153,
     },
     {
-      fieldName: 'LB59 WCC',
+      fieldName: 'vrm',
       left: 0.34271612763404846,
       top: 0.48084038496017456,
     },
     {
-      fieldName: 'LB59 WCC',
+      fieldName: 'vrm',
       left: 0.5506651401519775,
       top: 0.9176637530326843,
     },
@@ -99,9 +99,24 @@ const v5ImageConfigPage3 = {
   ],
   dynamicValues: [
     {
-      fieldName: 'WVWZZZ6RZCY258332',
-      left: 0.5917980074882507,
-      top: 0.09634590893983841,
+      fieldName: 'vrm',
+      left: 0.333432137966156,
+      top: 0.4235324561595917,
+    },
+    {
+      fieldName: 'vrm',
+      left: 0.3308589458465576,
+      top: 0.6200453042984009,
+    },
+    {
+      fieldName: 'fullName',
+      left: 0.5114233493804932,
+      top: 0.10968862473964691,
+    },
+    {
+      fieldName: 'street',
+      left: 0.5122077465057373,
+      top: 0.10968862473964691,
     },
   ]
 };
