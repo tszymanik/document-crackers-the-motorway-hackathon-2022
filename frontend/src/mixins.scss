@@ -1,0 +1,14 @@
+@mixin buttonLook {
+    background-color: #0460cc;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 24px;
+    padding: 4px 8px;
+    transition: background-color 0.1s linear;
+    border: none;
+    margin: auto;
+    margin-top: 12px;
+}
