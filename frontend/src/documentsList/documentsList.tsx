@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import {IUploadedDocumentOnList} from "./uploadedDocument.model";
 import {ImagesService} from "../services/images.service";
+import {inspect} from "util";
+import styles from './documentsList.module.scss'
 
 interface IDocumentsListProps {
     goToDetails: (item: IUploadedDocumentOnList) => void;
@@ -23,7 +25,7 @@ const DocumentsList = (props: IDocumentsListProps) => {
 
 
     return (
-        <div>
+        <div className={styles.wrapper}>
             <ul>
                 {documents.map((item: any, index: number) => (
                     <li

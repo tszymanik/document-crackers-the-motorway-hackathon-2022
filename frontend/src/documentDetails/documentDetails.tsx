@@ -24,6 +24,8 @@ const DocumentDetails = (props: IDocumentDetailsProps) => {
     }, [props.id])
 
     if (!document) return null
+    
+    console.log('props.url', props.url)
 
     return (
         <div>

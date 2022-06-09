@@ -5,10 +5,6 @@ export class ImagesService {
     private apiService: ApiService = new ApiService();
 
 
-    /*
-            just example
-     */
-
     public uploadImage(payload: any): AxiosPromise {
         return this.apiService.createRequest("POST", `/v5c`, {data: payload});
     }

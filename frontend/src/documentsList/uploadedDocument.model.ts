@@ -1,5 +1,5 @@
 export interface IUploadedDocumentOnList {
-    imageFile: string,
-    dataFile: string, // caly json
+    imageFile: string, // url to image
+    dataFile: string, // all JSON
     dataId: string // ID
 }
