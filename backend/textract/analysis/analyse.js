@@ -18,9 +18,10 @@ const interpolate = (f, xi) => {
 
 const equals = (a, b) => Math.abs(a - b) < 0.01;
 
-const analyze = (data, imageConfig) => {
+const analyze = (textractData, imageConfig) => {
+  const blocks = textractData.Blocks;
   const diff = imageConfig.staticValues.map(reference => {
-    const extractedData = data.find(extracted => extracted.Text && extracted.Text.toUpperCase().startsWith(reference.text.toUpperCase()));
+    const extractedData = blocks.find(extracted => extracted.Text && extracted.Text.toUpperCase().startsWith(reference.text.toUpperCase()));
     return {
       reference,
       extraction: {
@@ -40,7 +41,7 @@ const analyze = (data, imageConfig) => {
   const dynamicValuesInterpolations = imageConfig.dynamicValues.map(({ left, top, fieldName }) => {
     const interpolatedTop = interpolate(topValuesList, top);
     const interpolatedLeft = interpolate(leftValuesList, left);
-    matches = data.filter((extracted) =>
+    matches = blocks.filter((extracted) =>
       equals(extracted.Geometry.BoundingBox.Top, interpolatedTop)
       && equals(extracted.Geometry.BoundingBox.Left, interpolatedLeft)
     );
