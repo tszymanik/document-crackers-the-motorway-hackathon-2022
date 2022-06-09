@@ -10,7 +10,7 @@ export class ImagesService {
      */
 
     public uploadImage(payload: any): AxiosPromise {
-        return this.apiService.createRequest("POST", `/v5c`);
+        return this.apiService.createRequest("POST", `/v5c`, {data: payload});
     }
 
     // public getImage(id: string): AxiosPromise {
