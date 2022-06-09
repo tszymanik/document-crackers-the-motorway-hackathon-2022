@@ -19,10 +19,8 @@ const listProcessedDocuments = async () => {
         Prefix: 'images/'
     }).promise();
 
-    const [images, objects] = await Promise.all([imagesList, processedObjectList]);
-
-    const imagesData = images.Contents.splice(1).map((obj) => obj.Key)
-    const objectsData = objects.Contents.splice(1).map((obj) => obj.Key)
+    const imagesData = imagesList.Contents.splice(1).map((obj) => obj.Key)
+    const objectsData = processedObjectList.Contents.splice(1).map((obj) => obj.Key)
 
     const ret = imagesData.map((image) => {
         const dataFileName = image.replace('.','-') + '.json';
