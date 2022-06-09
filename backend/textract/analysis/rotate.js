@@ -28,9 +28,6 @@ const rotate = (blocks, angle) => blocks.slice(0,1).map(block => {
   }
 })
 
-const blocks = require('./../results/v5-1_rotated_40_deg.png.json');
-const blocksOrg = require('./../results/v5-1.png.json');
-
 // original
 // 0.5996101498603821
 // 1
