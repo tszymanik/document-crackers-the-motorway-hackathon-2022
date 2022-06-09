@@ -32,6 +32,8 @@ const calculateRotation = (P1, P2, P3) => {
 
 const radTo360 = (angle) => (angle / (2 * Math.PI)) * 360;
 
+// usage
+//  const transition = detectTransitions(v5ImageConfigPage2.known, textExtractBlockList);
 const detectTransitions = (known, wholeItems) => {
   const f = (text) => {
     return findText(wholeItems, 'LINE', text);

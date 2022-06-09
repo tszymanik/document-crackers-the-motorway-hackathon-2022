@@ -51,6 +51,27 @@ const firstV5ImageConfigPage1 = {
 const firstV5ImageConfigPage2 = {
   kind: 'v5',
   page: 2,
+  known: {
+    leftTop: {
+      text: 'Vehicle details',
+      x: 0.03163459151983261,
+      y: 0.004410078749060631,
+      polygonIndex: 0,
+    },
+    leftBottom: {
+      text: 'Change my vehicle details',
+      textFull: 'Change my vehicle details - Only fill in details to be corrected or changed',
+      x: 0.05151500552892685,
+      y: 0.4209668040275574,
+      polygonIndex: 0,
+    },
+    rightBottom: {
+      text: 'Current UK address (house number, street name, town / city):',
+      x: 0.6544532179832458,
+      y: 0.7378516793251038,
+      polygonIndex: 1,
+    },
+  },
   staticValues: [
     {
       text: 'Vehicle details',
