@@ -27,6 +27,7 @@ const listProcessedDocuments = async () => {
         const dataId = objectsData.includes(dataFileName) ? dataFileName : null;
 
         return {
+            imagePath: `/${image}`,
            imageFile: `${bucketUrl}images/${image}`,
            dataFile: dataId ? `${bucketUrl}images-data/${dataId}`: null,
            dataId: dataId ? dataId.replace('images-data/', '') : null,
