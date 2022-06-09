@@ -3,10 +3,9 @@
 import React, {useState} from 'react';
 import styles from './documentUpload.module.scss';
 
-
 const FileInput = React.forwardRef((props, ref: any) => {
     const {
-      children, handleFileChange, id,
+      handleFileChange, id,
     } : any = props;
   
     return (
@@ -22,17 +21,18 @@ const FileInput = React.forwardRef((props, ref: any) => {
           type="file"
         />
         <label htmlFor={id}>
-          {children}
+            {'submit document'}
         </label>
       </div>
     );
 });
 
 const renderImages = (documents) => {
+    console.log('rendering documents ===>', documents);
     return documents.map((document) => {
         return(
             <div className={styles.documentImages}>
-                <img src={document.imageUrl} alt={documet.imageUrl}></img>
+                <img src={document.imageUrl} alt={document.imageUrl}></img>
             </div>
         )
     });
@@ -48,24 +48,19 @@ const DocumentUpload = () => {
             imageUrl: URL.createObjectURL(event.target.files[0]),
         };
 
-        documentArray.push(uploadedDocument)
-        
-        console.log('updatedDocument state', documentArray);
+        documentArray.push(uploadedDocument);
         
         setDocumentState(documentArray);
     }
-
+    console.log('document array ==>', documentState);
     return (
         <div>
             <h4> Document upload </h4>
             <span> documents go here </span>
             
             <form>
-                <FileInput component={FileInput} handleFileChange={ (e) => { handleFileChange(e)}} id="uploadButton">
-                    {'submit document'}
-                </FileInput>
-                <span> images </span>
-                <div> {documentState.length && renderImages(documentState)}</div>
+                <FileInput component={FileInput} handleFileChange={ (e) => { handleFileChange(e)}} id="uploadButton" />
+                <div>{documentState.length && renderImages(documentState)}</div>
             </form>
         </div>
     )
