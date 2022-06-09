@@ -49,7 +49,7 @@ const DocumentUpload = ({addDocument}: IDocumentUploadProps) => {
                 <CropImageModal
                     src={URL.createObjectURL(currentFile)}
                     image={currentFile}
-                    applyCrop={(base64: any, fileName = 'name.jpg') => {
+                    applyCrop={(base64: any, fileName = 'page1.jpg') => {
                         addDocument({fileName, base64})
                         setCurrentFile(undefined); // will close modal
                     }}

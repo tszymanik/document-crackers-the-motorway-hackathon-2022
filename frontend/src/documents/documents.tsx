@@ -22,7 +22,12 @@ const Documents = () => {
             <div className={styles.buttonContainer}>
                 {!!documentState.length && (
                     <button className={styles.button} onClick={() => {
-                        imagesService.uploadImage(documentState)
+                        const payload = documentState.map((item, index) => {
+                            item.fileName = `${new Date().getTime()}-page${index + 1}.jpg`
+                            return item
+                        })
+
+                        imagesService.uploadImage(payload)
                             .then((r: any) => {
                                 alert('OK');
                                 setDocumentState([]);
