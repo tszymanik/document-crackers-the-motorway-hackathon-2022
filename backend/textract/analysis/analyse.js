@@ -55,7 +55,7 @@ const analyze = (textractData, imageConfig) => {
     }
   })
 
-  return { ...dynamicValuesInterpolations };
+  return dynamicValuesInterpolations;
 }
 
 module.exports = {
