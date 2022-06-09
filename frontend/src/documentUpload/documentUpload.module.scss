@@ -1,0 +1,35 @@
+.uploadButton {
+  
+    label {
+      align-items: center;
+      background-color: blue;
+      border-radius: 4px;
+      color: white;
+      cursor: pointer;
+      display: flex;
+      font-size: 16px;
+      font-weight: normal;
+      height: 48px;
+      justify-content: center;
+      line-height: 24px;
+      padding: 4px 8px;
+      transition: background-color 0.1s linear;
+    }
+  
+    input:focus + label {
+      outline: 2px solid gray;
+    }
+  
+    input {
+      height: 0;
+      position: absolute;
+      width: 0;
+    }
+}
+
+.documentImages {
+    img {
+        width: 300px;
+        height: 300px;
+    }
+}

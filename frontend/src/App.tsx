@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import BeforeAfter from './beforeAfter/beforeAfter';
+import DocumentUpload from './documentUpload/documentUpload';
 
 function App() {
   return (
@@ -19,8 +21,11 @@ function App() {
           Learn React
         </a>
       </header>
+      <BeforeAfter />
+      <DocumentUpload />
     </div>
   );
 }
+// add the react form..
 
 export default App;
