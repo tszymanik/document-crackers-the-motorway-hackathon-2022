@@ -15,25 +15,24 @@ const Documents = () => {
     }
 
     return (
-        <div>
+        <div className={styles.container}>
             <h4> Document upload </h4>
-            <div className={styles.container}>
-                <DocumentUpload addDocument={addDocument}/>
-                <DocumentDisplay documents={documentState} />
+            <DocumentUpload addDocument={addDocument}/>
+            <DocumentDisplay documents={documentState} />
+            <div className={styles.buttonContainer}>
+                {!!documentState.length && (
+                    <button className={styles.button} onClick={() => {
+                        imagesService.uploadImage(documentState)
+                            .then((r: any) => {
+                                alert('OK');
+                                setDocumentState([]);
+                            })
+                            .catch((e: any) => {
+                                alert(':(')
+                            });
+                    }}>Make Request</button>
+                )}
             </div>
-
-            {!!documentState.length && (
-                <button className={styles.button} onClick={() => {
-                    imagesService.uploadImage(documentState)
-                        .then((r: any) => {
-                            alert('OK');
-                            setDocumentState([]);
-                        })
-                        .catch((e: any) => {
-                            alert(':(')
-                        });
-                }}>make request</button>
-            )}
         </div>
     )
 }
