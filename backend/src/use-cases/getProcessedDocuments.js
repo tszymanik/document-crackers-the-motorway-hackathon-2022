@@ -29,7 +29,7 @@ const listProcessedDocuments = async () => {
         return {
            imageFile: `${bucketUrl}images/${image}`,
            dataFile: dataId ? `${bucketUrl}images-data/${dataId}`: null,
-           dataId
+           dataId: dataId.replace('images-data/', ''),
         }
     });
 
