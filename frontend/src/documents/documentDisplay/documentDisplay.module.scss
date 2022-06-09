@@ -5,13 +5,18 @@
         grid-template-columns: 1fr 1fr;
     }
 
+    @media (max-width: 420px) {
+        grid-template-columns: 1fr;
+    }
+
     grid-gap: 10px;
     justify-content: center;
   
     .imageWrapper {
-        border: 1px solid #1d1d1b4d;
+        border: 1px solid #a9a9a9;
         height: 344px;
         border-radius: 4px;
+        margin: 20px;
         img {
             width: 100%;
             height: 100%;

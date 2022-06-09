@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       {/*<BeforeAfter />*/}
-      <Header></Header>
+      <Header />
       <Documents />
     </div>
   );
