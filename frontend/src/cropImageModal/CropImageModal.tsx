@@ -18,7 +18,7 @@ const defaultCrop: Crop = {
 }
 
 const CropImageModal = (props: ICropImageProps) => {
-    const [crop, setCrop] = useState<Crop>(defaultCrop) // in &
+    const [crop, setCrop] = useState<Crop>(defaultCrop) // in %
 
     const imgRef = useRef<HTMLImageElement>(null)
 
