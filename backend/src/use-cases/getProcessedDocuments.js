@@ -1,7 +1,8 @@
 const { S3 } = require('aws-sdk');
+
 const s3 = new S3({
-    accessKeyId: process.env.AWS_ACCESS_KEY,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    accessKeyId: 'ASIA4DBU3L76QVIAKFM6',
+    secretAccessKey: 'ZFQB5MkO5Nve4w9v4QSkXoaOb63ZxfKbDZ33qBa5',
     region: 'eu-west-1'
 });
 
@@ -28,7 +29,7 @@ const listProcessedDocuments = async () => {
 
         return {
            imageFile: `${bucketUrl}images/${image}`,
-           dataFile: `${bucketUrl}images-data/${objectsData.includes(dataFileName) ? dataFileName : null}`;
+           dataFile: `${bucketUrl}images-data/${objectsData.includes(dataFileName) ? dataFileName : null}`
         }
     });
 
