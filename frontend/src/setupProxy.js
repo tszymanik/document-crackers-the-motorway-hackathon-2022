@@ -4,7 +4,7 @@ module.exports = function(app) {
     app.use(
         '/v5c',
         createProxyMiddleware({
-            target: 'http://54.194.168.96:3001',
+            target: 'http://44.201.115.26:3001',
             changeOrigin: true,
             logLevel: 'debug',
             // pathRewrite: {

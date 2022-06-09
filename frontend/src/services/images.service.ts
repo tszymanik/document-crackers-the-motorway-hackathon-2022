@@ -13,7 +13,11 @@ export class ImagesService {
         return this.apiService.createRequest("POST", `/v5c`, {data: payload});
     }
 
-    // public getImage(id: string): AxiosPromise {
-    //     return this.apiService.createRequest("GET", `/some-url`);
-    // }
+    public getList(): AxiosPromise {
+        return this.apiService.createRequest("GET", `/v5c`);
+    }
+
+    public getSingle(id: string): AxiosPromise {
+        return this.apiService.createRequest("GET", `/v5c/${id}`);
+    }
 }
