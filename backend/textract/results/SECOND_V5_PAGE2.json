@@ -3832,8 +3832,7 @@
     {
       "BlockType": "LINE",
       "Confidence": 99.79292297363281,
-      "Text": "1 Change my 
-      ",
+      "Text": "1 Change my vehicle details",
       "Geometry": {
         "BoundingBox": {
           "Width": 0.2343272715806961,
