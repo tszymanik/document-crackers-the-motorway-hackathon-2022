@@ -1,9 +1,9 @@
 const { S3 } = require('aws-sdk');
 
 const s3 = new S3({
-    accessKeyId: process.env.AWS_ACCESS_KEY,
+    /*accessKeyId: process.env.AWS_ACCESS_KEY,
     secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-    region: 'eu-west-1'
+    region: 'eu-west-1'*/
 });
 
 const bucketUrl = 'https://document-crackers-2022.s3.eu-west-1.amazonaws.com/'
@@ -19,19 +19,17 @@ const listProcessedDocuments = async () => {
         Prefix: 'images/'
     }).promise();
 
-    const [images, objects] = await Promise.all([imagesList, processedObjectList]);
-
-    const imagesData = images.Contents.splice(1).map((obj) => obj.Key)
-    const objectsData = objects.Contents.splice(1).map((obj) => obj.Key)
+    const imagesData = imagesList.Contents.splice(1).map((obj) => obj.Key)
+    const objectsData = processedObjectList.Contents.splice(1).map((obj) => obj.Key)
 
     const ret = imagesData.map((image) => {
-        const dataFileName = image.replace('.','-') + '.json';
+        const dataFileName = image.replace('.','-').replace('images/', 'images-data/') + '.json';
         const dataId = objectsData.includes(dataFileName) ? dataFileName : null;
 
         return {
            imageFile: `${bucketUrl}images/${image}`,
            dataFile: dataId ? `${bucketUrl}images-data/${dataId}`: null,
-           dataId
+           dataId: dataId ? dataId.replace('images-data/', '') : null,
         }
     });
 

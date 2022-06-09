@@ -6,8 +6,6 @@ export const getCroppedImgBlob = (image: CanvasImageSource, pixelCrop: Crop, fil
     canvas.height = pixelCrop.height;
     const ctx: CanvasRenderingContext2D = canvas.getContext("2d") as CanvasRenderingContext2D;
 
-    console.log('pixelCrop', pixelCrop)
-
     ctx.drawImage(
         image,
         pixelCrop.x,

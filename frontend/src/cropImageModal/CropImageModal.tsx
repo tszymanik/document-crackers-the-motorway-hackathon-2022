@@ -6,7 +6,7 @@ import {blobToBase64, getCroppedImgBlob} from "./cropImageHelper";
 interface ICropImageProps {
     src: string;
     image: any;
-    applyCrop: (base64Image: string) => void
+    applyCrop: (base64Image: string, fileName?: string) => void
 }
 
 const defaultCrop: Crop = {
@@ -18,19 +18,30 @@ const defaultCrop: Crop = {
 }
 
 const CropImageModal = (props: ICropImageProps) => {
-    const [crop, setCrop] = useState<Crop>(defaultCrop)
+    const [crop, setCrop] = useState<Crop>(defaultCrop) // in %
 
     const imgRef = useRef<HTMLImageElement>(null)
 
     const apply = () => {
+        const img = document.getElementsByTagName("img")[0];
+        const tempImg = new Image();
+        tempImg.src = img.getAttribute('src') as string
+        const fileName = `image-${new Date().getTime()}.jpg`
+
         getCroppedImgBlob(
-            document.getElementsByTagName("img")[0],
-            crop,
-            'some.jpg'
+            img,
+            {
+                x: crop.x / 100 * tempImg.width,
+                y: crop.y / 100 * tempImg.height,
+                width: crop.width / 100 * tempImg.width,
+                height: crop.height / 100 * tempImg.height,
+                unit: 'px'
+            },
+            fileName
         ).then((blob: any) => {
             blobToBase64(blob)
                 .then((base64: string) => {
-                    props.applyCrop(base64)
+                    props.applyCrop(base64, fileName)
                 })
         })
     }
@@ -41,7 +52,7 @@ const CropImageModal = (props: ICropImageProps) => {
             <div className={styles.content}>
                 <ReactCrop
                     crop={crop}
-                    onChange={(pixelCrop, percentCrop) => setCrop(pixelCrop)}
+                    onChange={(pixelCrop, percentCrop) => setCrop(percentCrop)}
                 >
                     <img
                         ref={imgRef}
