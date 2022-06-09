@@ -30,6 +30,7 @@ const listProcessedDocuments = async () => {
         return {
            imageFile: `${bucketUrl}images/${image}`,
            dataFile: `${bucketUrl}images-data/${objectsData.includes(dataFileName) ? dataFileName : null}`
+           dataId: `${objectsData.includes(dataFileName) ? dataFileName : null}`
         }
     });
 
