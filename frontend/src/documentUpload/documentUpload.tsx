@@ -8,7 +8,7 @@ const FileInput = React.forwardRef((props, ref: any) => {
     const {
       children, handleFileChange, id,
     } : any = props;
-  
+
     return (
       <div ref={ref} className={styles.uploadButton}>
         <input
@@ -31,8 +31,8 @@ const FileInput = React.forwardRef((props, ref: any) => {
 const renderImages = (documents) => {
     return documents.map((document) => {
         return(
-            <div className={styles.documentImages}>
-                <img src={document.imageUrl} alt={documet.imageUrl}></img>
+            <div className={styles.documentImages} key={document.imageUrl}>
+                <img src={document.imageUrl} alt={document.imageUrl}></img>
             </div>
         )
     });
@@ -49,9 +49,9 @@ const DocumentUpload = () => {
         };
 
         documentArray.push(uploadedDocument)
-        
+
         console.log('updatedDocument state', documentArray);
-        
+
         setDocumentState(documentArray);
     }
 
@@ -59,7 +59,7 @@ const DocumentUpload = () => {
         <div>
             <h4> Document upload </h4>
             <span> documents go here </span>
-            
+
             <form>
                 <FileInput component={FileInput} handleFileChange={ (e) => { handleFileChange(e)}} id="uploadButton">
                     {'submit document'}
