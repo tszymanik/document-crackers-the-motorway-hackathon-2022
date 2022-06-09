@@ -13,7 +13,7 @@ const DocumentDisplay = ({ documents }: IDocumentDisplayProps) => {
             <h4> Your documents </h4>
             <div className={styles.documentImages}>
             {documents.map((item) => (
-                <div key={item.base64} className={styles.imageWrapper} style={{backgroundImage: `url(${item.base64})`}} />
+                <div key={item.fileName} className={styles.imageWrapper} style={{backgroundImage: `url(${item.base64})`}} />
             ))}
             </div>
         </>
