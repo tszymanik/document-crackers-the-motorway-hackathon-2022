@@ -1,10 +1,9 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck
-import React from 'react';
-import styles from './documentDisplay.module.scss';
+import React  from 'react';
+import styles from '../documentUpload/documentUpload.module.scss';
+import {IDocument} from "../document.model";
 
 interface IDocumentDisplayProps {
-    documents: {fileName: string, base64: string}[]
+    documents: IDocument[]
 }
 
 const DocumentDisplay = ({ documents }: IDocumentDisplayProps) => {
