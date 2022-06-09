@@ -45,7 +45,7 @@ const analyze = (textractData, imageConfig) => {
       equals(extracted.Geometry.BoundingBox.Top, interpolatedTop)
       && equals(extracted.Geometry.BoundingBox.Left, interpolatedLeft)
     );
-    const value = matches.sort((a, b) => a.Text.length - b.Text.length)[0];
+    const value = matches.sort((a, b) => b.Text.length - a.Text.length)[0];
     return {
       fieldName,
       left: interpolatedLeft,
