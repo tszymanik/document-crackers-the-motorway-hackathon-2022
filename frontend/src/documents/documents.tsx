@@ -1,17 +1,13 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck
 import React, {useState} from 'react';
 import DocumentUpload from './documentUpload/documentUpload';
 import DocumentDisplay from "./documentDisplay/documentDisplay";
+import {IDocument} from "./document.model";
 
 
 const Documents = () => {
-    const [documentState, setDocumentState] = useState([]);
+    const [documentState, setDocumentState] = useState<IDocument[]>([]);
 
-    const addDocument = (fileName: string, base64: string) => {
-        const uploadedDocument = {
-            fileName, base64
-        };
+    const addDocument = (uploadedDocument: IDocument) => {
         setDocumentState([...documentState, uploadedDocument])
     }
 

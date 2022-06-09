@@ -1,11 +1,10 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck
+import { Crop } from "react-image-crop";
 
-export const getCroppedImgBlob = (image, pixelCrop, fileName): Promise<any> => {
+export const getCroppedImgBlob = (image: CanvasImageSource, pixelCrop: Crop, fileName: string): Promise<any> => {
     const canvas = document.createElement("canvas");
     canvas.width = pixelCrop.width;
     canvas.height = pixelCrop.height;
-    const ctx = canvas.getContext("2d");
+    const ctx: CanvasRenderingContext2D = canvas.getContext("2d") as CanvasRenderingContext2D;
 
     console.log('pixelCrop', pixelCrop)
 
@@ -23,15 +22,17 @@ export const getCroppedImgBlob = (image, pixelCrop, fileName): Promise<any> => {
 
     return new Promise((resolve, reject) => {
         canvas.toBlob(file => {
+            // @ts-ignore
             file.name = fileName;
             resolve(file);
         }, "image/jpeg");
     });
 }
 
-export const blobToBase64 = (blob) => {
+export const blobToBase64 = (blob: Blob): Promise<string> => {
     return new Promise((resolve, _) => {
         const reader = new FileReader();
+        // @ts-ignore
         reader.onloadend = () => resolve(reader.result);
         reader.readAsDataURL(blob);
     });

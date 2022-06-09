@@ -1,13 +1,15 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck
 import React, {useState} from 'react';
 import styles from './documentUpload.module.scss';
 import CropImageModal from "../../cropImageModal/CropImageModal";
+import {IDocument} from "../document.model";
 
-const FileInput = React.forwardRef((props, ref: any) => {
-    const {
-      handleFileChange, id,
-    } : any = props;
+interface IFileInputProps {
+    handleFileChange: (e: any) => void
+    id: string
+}
+
+const FileInput = React.forwardRef((props: IFileInputProps, ref: any): JSX.Element => {
+    const { handleFileChange, id } : IFileInputProps = props;
 
     return (
       <div ref={ref} className={styles.uploadButton}>
@@ -15,8 +17,7 @@ const FileInput = React.forwardRef((props, ref: any) => {
           ref={ref}
           id={id}
           onChange={handleFileChange}
-          onClick={(event) => {
-            // to allow the same file be uploaded again
+          onClick={(event: any) => {
             event.target.value = null;
           }}
           type="file"
@@ -28,23 +29,17 @@ const FileInput = React.forwardRef((props, ref: any) => {
     );
 });
 
-const renderImages = (documents) => {
-    return documents.map((document) => {
-        return(
-            <div className={styles.documentImages} key={document.imageUrl}>
-                <img src={document.imageUrl} alt={document.imageUrl}></img>
-            </div>
-        )
-    });
+interface IDocumentUploadProps {
+    addDocument: (doc: IDocument) => void
 }
 
-const DocumentUpload = (props) => {
+const DocumentUpload = ({addDocument}: IDocumentUploadProps) => {
     const [currentFile, setCurrentFile] = useState(undefined)
     return (
         <>
             <form>
                 <FileInput
-                    handleFileChange={ (e) => {
+                    handleFileChange={ (e: any) => {
                         setCurrentFile(e.target.files[0])
                     }}
                     id="uploadButton"
@@ -54,8 +49,8 @@ const DocumentUpload = (props) => {
                 <CropImageModal
                     src={URL.createObjectURL(currentFile)}
                     image={currentFile}
-                    applyCrop={(bases64: any) => {
-                        props.addDocument('name.jpg', bases64)
+                    applyCrop={(base64: any) => {
+                        addDocument({fileName: 'name.jpg', base64}) // TODO file name
                         setCurrentFile(undefined); // will close modal
                     }}
                 />

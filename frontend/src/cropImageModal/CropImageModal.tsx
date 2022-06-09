@@ -1,9 +1,6 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck
 import React, {useState, ChangeEvent, useRef, useEffect} from 'react';
 import ReactCrop, {Crop} from 'react-image-crop'
 import 'react-image-crop/dist/ReactCrop.css'
-import {PercentCrop, PixelCrop} from "react-image-crop/dist/types";
 import styles from './CropImageModal.module.scss';
 import {blobToBase64, getCroppedImgBlob} from "./cropImageHelper";
 
@@ -34,7 +31,6 @@ const CropImageModal = (props: ICropImageProps) => {
         ).then((blob: any) => {
             blobToBase64(blob)
                 .then((base64: string) => {
-                    console.log('base64', base64)
                     props.applyCrop(base64)
                 })
         })
@@ -47,8 +43,6 @@ const CropImageModal = (props: ICropImageProps) => {
                 <ReactCrop
                     crop={crop}
                     onChange={(pixelCrop, percentCrop) => setCrop(pixelCrop)}
-                    // onComplete={(c) => onComplete}
-                    // aspect={aspect}
                 >
                     <img
                         ref={imgRef}

@@ -1,21 +1,18 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck
-import React, {useState} from 'react';
+import React  from 'react';
 import styles from '../documentUpload/documentUpload.module.scss';
-import CropImageModal from "../../cropImageModal/CropImageModal";
-
+import {IDocument} from "../document.model";
 
 interface IDocumentDisplayProps {
-    documents: {fileName: string, base64: string}[]
+    documents: IDocument[]
 }
 
 const DocumentDisplay = ({ documents }: IDocumentDisplayProps) => {
     if (!documents || !documents.length) return null
     return (
         <div>
-            {documents.map((item) => (
+            {documents.map((item: IDocument) => (
                 <div className={styles.documentImages} key={item.base64}>
-                    <img src={item.base64} alt={item.base64}></img>
+                    <img src={item.base64} alt={item.base64}/>
                 </div>
             ))}
         </div>
