@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import BeforeAfter from './beforeAfter/beforeAfter';
-import DocumentUpload from './documentUpload/documentUpload';
+import Documents from './documents/documents';
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
         </a>
       </header>
       <BeforeAfter />
-      <DocumentUpload />
+      <Documents />
     </div>
   );
 }
