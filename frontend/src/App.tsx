@@ -7,6 +7,7 @@ import Footer from './footer/footer';
 import DocumentsList from "./documentsList/documentsList";
 import {IUploadedDocumentOnList} from "./documentsList/uploadedDocument.model";
 import DocumentDetails from "./documentDetails/documentDetails";
+import styles from './app.module.scss';
 
 function App() {
     const [view, setView] = useState<'list' | 'add' | 'details'>('list')
@@ -14,9 +15,21 @@ function App() {
 
     return (
         <div className="App">
-            <Header/>
-            <button onClick={() => setView('list')} >list</button>
-            <button onClick={() => setView('add')} >add</button>
+            <Header />
+            <div className={styles.nav}>
+              <div></div>
+              <nav className={styles.nav}>
+                <ul>
+                  <li>
+                    <span onClick={() => setView('list')}>List</span>
+                  </li>
+                  <li>
+                    <span onClick={() => setView('add')}>Add</span>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+
             {view === 'add' && (
                 <AddDocuments/>
             )}
