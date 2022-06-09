@@ -1,4 +1,4 @@
-const v5ImageConfigPage1 = {
+const firstV5ImageConfigPage1 = {
   kind: 'v5',
   page: 1,
   staticValues: [
@@ -48,7 +48,7 @@ const v5ImageConfigPage1 = {
   ]
 };
 
-const v5ImageConfigPage2 = {
+const firstV5ImageConfigPage2 = {
   kind: 'v5',
   page: 2,
   staticValues: [
@@ -97,7 +97,7 @@ const v5ImageConfigPage2 = {
   ]
 };
 
-const v5ImageConfigPage3 = {
+const firstV5ImageConfigPage3 = {
   kind: 'v5',
   page: 3,
   staticValues: [
@@ -110,6 +110,11 @@ const v5ImageConfigPage3 = {
       text: '4 Selling, transferring or part exchanging',
       left: 0.04665317386388779,
       top: 0.3229416012763977,
+    },
+    {
+      text: '5 Permanently exporting this vehicle',
+      left: 0.04759446904063225,
+      top: 0.5496215224266052,
     },
     {
       text: '6 New keeper',
@@ -161,8 +166,350 @@ const v5ImageConfigPage3 = {
   ]
 };
 
+const secondV5ImageConfigPage1 = {
+  kind: 'v5',
+  page: 1,
+  staticValues: [
+    {
+      text: 'UNITED KINGDOM',
+      left: 0.606758713722229,
+      top: 0.10453621298074722,
+
+    },
+    {
+      text: "THIS DOCUMENT IS NOT PROOF OF OWNERSHIP",
+      left: 0.22009965777397156,
+      top: 0.356924831867218,
+    },
+    {
+      text: "Buyer beware",
+      left: 0.5574899911880493,
+      top: 0.29725927114486694,
+    },
+  ],
+  dynamicValues: [
+    {
+      fieldName: 'fullName',
+      left: 0.225237175822258,
+      top: 0.2158038467168808,
+    },
+    {
+      fieldName: 'street',
+      left: 0.22697794437408447,
+      top: 0.23688803613185883,
+    },
+    {
+      fieldName: 'city',
+      left: 0.22637413442134857,
+      top: 0.2510144114494324,
+    },
+    {
+      fieldName: 'postCode',
+      left: 0.22637413442134857,
+      top: 0.25100553035736084,
+    },
+    {
+      fieldName: 'vrm',
+      left: 0.42981719970703125,
+      top: 0.13104669749736786,
+    },
+  ]
+};
+
+const secondV5ImageConfigPage2 = {
+  kind: 'v5',
+  page: 2,
+  staticValues: [
+    {
+      text: 'Vehicle details',
+      left: 0.10862427949905396,
+      top: 0.08373246341943741,
+    },
+    {
+      text: '1 Change my vehicle details',
+      left: 0.10741472989320755,
+      top: 0.43371859192848206,
+    },
+    {
+      text: '2 Selling or transferring my vehicle to a new keeper',
+      left: 0.11359325796365738,
+      top: 0.6011613607406616,
+    },
+  ],
+  dynamicValues: [
+    {
+      fieldName: 'vin',
+      left: 0.6054991483688354,
+      top: 0.11831867694854736,
+    },
+    {
+      fieldName: 'vrm',
+      left: 0.18588188290596008,
+      top: 0.10496804118156433,
+    },
+    {
+      fieldName: 'vrm',
+      left: 0.1984231024980545,
+      top: 0.4771973192691803,
+    },
+    {
+      fieldName: 'vrm',
+      left: 0.1982429474592209,
+      top: 0.6839448809623718,
+    },
+    {
+      fieldName: 'vrm',
+      left: 0.5118321180343628,
+      top: 0.837252140045166,
+    },
+  ]
+};
+
+const secondV5ImageConfigPage3 = {
+  kind: 'v5',
+  page: 3,
+  staticValues: [
+    {
+      text: '3 Change my name and',
+      left: 0.1456163376569748,
+      top: 0.12513107061386108,
+    },
+    {
+      text: '4 Selling, transferring or part exchanging',
+      left: 0.1518709808588028,
+      top: 0.35248973965644836,
+    },
+    {
+      text: 'Permanently exporting this vehicle',
+      left: 0.17171885073184967,
+      top: 0.5407677888870239,
+    },
+    {
+      text: '6 New keeper',
+      left: 0.15546084940433502,
+      top: 0.6636675000190735
+    },
+  ],
+  dynamicValues: [
+    {
+      fieldName: 'vrm',
+      left: 0.23299764096736908,
+      top: 0.17921759188175201,
+    },
+    {
+      fieldName: 'vrm',
+      left: 0.252881795167923,
+      top: 0.4424804747104645,
+    },
+    {
+      fieldName: 'vrm',
+      left: 0.24178849160671234,
+      top: 0.6078512072563171,
+    },
+    {
+      fieldName: 'vrm',
+      left: 0.2415994256734848,
+      top: 0.7719635367393494,
+    },
+    {
+      fieldName: 'fullName',
+      left: 0.5140661597251892,
+      top: 0.1768994927406311,
+    },
+    {
+      fieldName: 'street',
+      left: 0.5155034065246582,
+      top: 0.1970977783203125,
+    },
+    {
+      fieldName: 'city',
+      left: 0.5147582292556763,
+      top: 0.21087390184402466,
+    },
+    {
+      fieldName: 'postCode',
+      left: 0.515421986579895,
+      top: 0.22467562556266785,
+    },
+  ]
+};
+
+const thirdV5ImageConfigPage1 = {
+  kind: 'v5',
+  page: 1,
+  staticValues: [
+    {
+      text: 'UNITED KINGDOM',
+      left: 0.6854744553565979,
+      top: 0.14231938123703003,
+
+    },
+    {
+      text: "THIS DOCUMENT IS NOT PROOF OF OWNERSHIP",
+      left: 0.2682826817035675,
+      top: 0.3305712342262268,
+    },
+    {
+      text: "Buyer beware",
+      left: 0.5974205136299133,
+      top: 0.3166453242301941,
+    },
+  ],
+  dynamicValues: [
+    {
+      fieldName: 'fullName',
+      left: 0.3058857321739197,
+      top: 0.19857046008110046,
+    },
+    {
+      fieldName: 'street',
+      left: 0.3025429844856262,
+      top: 0.21919916570186615,
+    },
+    {
+      fieldName: 'city',
+      left: 0.2989630699157715,
+      top: 0.23213152587413788,
+    },
+    {
+      fieldName: 'postCode',
+      left: 0.2989630699157715,
+      top: 0.23213152587413788,
+    },
+    {
+      fieldName: 'vrm',
+      left: 0.5145527720451355,
+      top: 0.14563442766666412,
+    },
+  ]
+};
+
+const thirdV5ImageConfigPage2 = {
+  kind: 'v5',
+  page: 2,
+  staticValues: [
+    {
+      text: 'Vehicle details',
+      left: 0.2265367954969406,
+      top: 0.06358601897954941,
+    },
+    {
+      text: 'Change my vehicle details',
+      left: 0.16535690426826477,
+      top: 0.39239513874053955,
+    },
+    {
+      text: '2 Selling or transferring my vehicle to a new keeper',
+      left: 0.11687963455915451,
+      top: 0.5474424958229065,
+    },
+  ],
+  dynamicValues: [
+    {
+      fieldName: 'vin',
+      left: 0.6828852891921997,
+      top: 0.15723125636577606,
+    },
+    {
+      fieldName: 'vrm',
+      left: 0.29436489939689636,
+      top: 0.09264235943555832,
+    },
+    {
+      fieldName: 'vrm',
+      left: 0.22313092648983002,
+      top: 0.44134387373924255,
+    },
+    {
+      fieldName: 'vrm',
+      left: 0.177662193775177,
+      top: 0.6342758536338806,
+    },
+    {
+      fieldName: 'vrm',
+      left: 0.43682053685188293,
+      top: 0.8159837126731873,
+    },
+  ]
+};
+
+const thirdV5ImageConfigPage3 = {
+  kind: 'v5',
+  page: 3,
+  staticValues: [
+    {
+      text: '3 Change my name and',
+      left: 0.24977925419807434,
+      top: 0.11048144102096558,
+    },
+    {
+      text: '4 Selling, transferring or part exchanging',
+      left: 0.2060847133398056,
+      top: 0.3233114778995514,
+    },
+    {
+      text: '5 Permanently exporting this vehicle',
+      left: 0.16526830196380615,
+      top: 0.5003858804702759,
+    },
+    {
+      text: '6 New keeper slip',
+      left: 0.14080138504505157,
+      top: 0.6153717041015625,
+    },
+  ],
+  dynamicValues: [
+    {
+      fieldName: 'vrm',
+      left: 0.31956684589385986,
+      top: 0.17177791893482208,
+    },
+    {
+      fieldName: 'vrm',
+      left: 0.27983763813972473,
+      top: 0.4196237623691559,
+    },
+    {
+      fieldName: 'vrm',
+      left: 0.23396791517734528,
+      top: 0.5726730227470398,
+    },
+    {
+      fieldName: 'vrm',
+      left: 0.1979038268327713,
+      top: 0.7258041501045227,
+    },
+    {
+      fieldName: 'fullName',
+      left: 0.5846443772315979,
+      top: 0.2032730132341385,
+    },
+    {
+      fieldName: 'street',
+      left: 0.5798117518424988,
+      top: 0.223151296377182,
+    },
+    {
+      fieldName: 'city',
+      left: 0.5767574310302734,
+      top: 0.2360750287771225,
+    },
+    {
+      fieldName: 'postCode',
+      left: 0.5736727714538574,
+      top: 0.2490018606185913,
+    },
+  ]
+};
+
 module.exports = {
-  v5ImageConfigPage1,
-  v5ImageConfigPage2,
-  v5ImageConfigPage3,
+  firstV5ImageConfigPage1,
+  firstV5ImageConfigPage2,
+  firstV5ImageConfigPage3,
+  secondV5ImageConfigPage1,
+  secondV5ImageConfigPage2,
+  secondV5ImageConfigPage3,
+  thirdV5ImageConfigPage1,
+  thirdV5ImageConfigPage2,
+  thirdV5ImageConfigPage3,
 }
