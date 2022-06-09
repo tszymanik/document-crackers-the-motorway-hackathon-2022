@@ -7,7 +7,7 @@ const {listProcessedDocuments, getProcessedDocument} = require("./src/use-cases/
 const {returnPostV5c} = require("./src/fakes/post_v5c");
 const {returnGetV5c, returnGetV5cId} = require("./src/fakes/get_v5c");
 const port = 3001;
-app.use(body.json());
+app.use(body.json({ limit: '50mb' }));
 
 app.post('/v5c', async (req, res) => {
     if (req.headers['x-get-fake']) {
