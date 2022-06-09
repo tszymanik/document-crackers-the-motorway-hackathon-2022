@@ -4,6 +4,7 @@ import 'react-image-crop/dist/ReactCrop.css'
 import BeforeAfter from './beforeAfter/beforeAfter';
 import Documents from './documents/documents';
 import Header from './header/header';
+import Footer from './footer/footer';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       {/*<BeforeAfter />*/}
       <Header />
       <Documents />
+      <Footer />
     </div>
   );
 }
