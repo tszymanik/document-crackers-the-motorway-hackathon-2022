@@ -41,7 +41,7 @@ const analyze = (textractData, imageConfig) => {
   const dynamicValuesInterpolations = imageConfig.dynamicValues.map(({ left, top, fieldName }) => {
     const interpolatedTop = interpolate(topValuesList, top);
     const interpolatedLeft = interpolate(leftValuesList, left);
-    matches = blocks.filter((extracted) =>
+    const matches = blocks.filter((extracted) =>
       equals(extracted.Geometry.BoundingBox.Top, interpolatedTop)
       && equals(extracted.Geometry.BoundingBox.Left, interpolatedLeft)
     );
