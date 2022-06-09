@@ -41,7 +41,7 @@ function App() {
             )}
 
             {view === 'details' && details?.dataId && details.imageFile && (
-                <DocumentDetails id={details.dataId} url={details.imageFile} back={() => {setView('list')}} />
+                <DocumentDetails id={details.dataId} url={details.imageFile} imagePath={details.imagePath} back={() => {setView('list')}} />
             )}
             <Footer/>
         </div>
