@@ -12,7 +12,7 @@ const Header = () => {
     return (
         <div className={styles.header}>
             <MotorwayLogo/>
-            <h2>Document Crackers </h2>
+            <h2>Document Crackers</h2>
         </div>
     );
 }
