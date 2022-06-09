@@ -1,0 +1,30 @@
+.wrapper {
+  height: 100%;
+  width: 100%;
+  position: relative;
+
+  .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-position: 0 0;
+    background-size: cover;
+    background-color: pink;
+
+    &.first {}
+    &.second {}
+  }
+
+  .slider {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    width: 100%;
+    > input {
+      width: 100%;
+    }
+
+  }
+}
