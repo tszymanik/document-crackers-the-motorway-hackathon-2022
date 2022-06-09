@@ -26,11 +26,12 @@ const listProcessedDocuments = async () => {
 
     const ret = imagesData.map((image) => {
         const dataFileName = image.replace('.','-') + '.json';
+        const dataId = objectsData.includes(dataFileName) ? dataFileName : null;
 
         return {
            imageFile: `${bucketUrl}images/${image}`,
-           dataFile: `${bucketUrl}images-data/${objectsData.includes(dataFileName) ? dataFileName : null}`
-           dataId: `${objectsData.includes(dataFileName) ? dataFileName : null}`
+           dataFile: dataId ? `${bucketUrl}images-data/${dataId}`: null,
+           dataId
         }
     });
 
