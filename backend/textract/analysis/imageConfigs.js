@@ -26,10 +26,25 @@ const v5ImageConfigPage1 = {
       top: 0.17554330825805664
     },
     {
-      fieldName: 'licenceNumber',
+      fieldName: 'street',
+      left: 0.128655806183815,
+      top: 0.1922636330127716,
+    },
+    {
+      fieldName: 'city',
+      left: 0.1278344988822937,
+      top: 0.20942866802215576,
+    },
+    {
+      fieldName: 'postCode',
+      left: 0.1278344988822937,
+      top: 0.20942866802215576,
+    },
+    {
+      fieldName: 'vrm',
       left: 0.366097092628479,
       top: 0.0653751939535141
-    }
+    },
   ]
 };
 
@@ -39,40 +54,45 @@ const v5ImageConfigPage2 = {
   staticValues: [
     {
       text: 'Vehicle details',
-      left: 0.29780763387680054,
-      top: 0.059533338993787766,
+      left: 0.03163459151983261,
+      top: 0.004410078749060631,
     },
     {
       text: 'Change my vehicle details',
-      left: 0.2956525385379791,
-      top: 0.4300755560398102,
+      left: 0.05151500552892685,
+      top: 0.4209668040275574,
     },
     {
-      text: 'Selling or transferring my vehicle to a new keeper',
-      left: 0.2902834713459015,
-      top: 0.6145002841949463,
+      text: '2 Selling or transferring my vehicle to a new keeper',
+      left: 0.036886028945446014,
+      top: 0.6231689453125,
     },
   ],
   dynamicValues: [
     {
       fieldName: 'vin',
-      left: 0.5917980074882507,
-      top: 0.09634590893983841,
+      left: 0.6255255937576294,
+      top: 0.04200129956007004,
     },
     {
       fieldName: 'vrm',
-      left: 0.3427649736404419,
-      top: 0.08099092543125153,
+      left: 0.13434819877147675,
+      top: 0.027145011350512505,
     },
     {
       fieldName: 'vrm',
-      left: 0.34271612763404846,
-      top: 0.48084038496017456,
+      left: 0.14532622694969177,
+      top: 0.47630900144577026,
     },
     {
       fieldName: 'vrm',
-      left: 0.5506651401519775,
-      top: 0.9176637530326843,
+      left: 0.14865845441818237,
+      top: 0.7221554517745972,
+    },
+    {
+      fieldName: 'vrm',
+      left: 0.5225839018821716,
+      top: 0.9037426114082336,
     },
   ]
 };
@@ -83,50 +103,60 @@ const v5ImageConfigPage3 = {
   staticValues: [
     {
       text: 'Change my name and',
-      left: 0.26986145973205566,
-      top: 0.04208293929696083,
+      left: 0.06143994256854057,
+      top: 0.05059489980340004,
     },
     {
       text: '4 Selling, transferring or part exchanging',
-      left: 0.26626279950141907,
-      top: 0.31712010502815247,
+      left: 0.04665317386388779,
+      top: 0.3229416012763977,
     },
     {
-      text: 'New keeper',
-      left: 0.2767312526702881,
-      top: 0.6941570043563843,
+      text: '6 New keeper',
+      left: 0.05139901861548424,
+      top: 0.6967772245407104,
     },
   ],
   dynamicValues: [
     {
       fieldName: 'vrm',
-      left: 0.333432137966156,
-      top: 0.4235324561595917,
+      left: 0.14970898628234863,
+      top: 0.11381647735834122,
     },
     {
       fieldName: 'vrm',
-      left: 0.3308589458465576,
-      top: 0.6200453042984009,
+      left: 0.16407988965511322,
+      top: 0.4300013780593872,
+    },
+    {
+      fieldName: 'vrm',
+      left: 0.16448330879211426,
+      top: 0.6282804012298584,
+    },
+    {
+      fieldName: 'vrm',
+      left: 0.15701419115066528,
+      top: 0.8253995180130005,
     },
     {
       fieldName: 'fullName',
-      left: 0.5114233493804932,
-      top: 0.10968862473964691,
+      left: 0.4825829267501831,
+      top: 0.12007444351911545,
     },
     {
       fieldName: 'street',
-      left: 0.5122077465057373,
-      top: 0.10968862473964691,
+      left: 0.48344185948371887,
+      top: 0.1369476020336151,
     },
     {
       fieldName: 'city',
-      left: 0.5110691785812378,
-      top: 0.13347965478897095,
+      left: 0.4827449917793274,
+      top: 0.15345510840415955,
     },
     {
       fieldName: 'postCode',
-      left: 0.5112070441246033,
-      top: 0.14708532392978668,
+      left: 0.4826594293117523,
+      top: 0.17018680274486542,
     },
   ]
 };
