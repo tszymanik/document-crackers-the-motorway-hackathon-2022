@@ -21,6 +21,11 @@ const equals = (a, b) => Math.abs(a - b) < 0.01;
 const calcDiff = (blocks, imageConfig) => {
   return imageConfig.staticValues.map(reference => {
     const extractedData = blocks.find(extracted => extracted.Text && extracted.Text.toUpperCase().startsWith(reference.text.toUpperCase()));
+
+    if(!extractedData) {
+      return null;
+    }
+
     return {
       reference,
       extraction: {
@@ -32,7 +37,7 @@ const calcDiff = (blocks, imageConfig) => {
         top: extractedData.Geometry.BoundingBox.Top - reference.top
       }
     }
-  })
+  }).filter(v => !!v);
 }
 
 const analyze = (textractData, imageConfig) => {
