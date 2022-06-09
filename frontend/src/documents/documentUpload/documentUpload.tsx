@@ -30,7 +30,7 @@ const FileInput = React.forwardRef((props, ref: any) => {
 const renderImages = (documents) => {
     return documents.map((document) => {
         return(
-            <div className={styles.documentImages}>
+            <div className={styles.documentImages} key={document.imageUrl}>
                 <img src={document.imageUrl} alt={document.imageUrl}></img>
             </div>
         )
@@ -41,7 +41,7 @@ const DocumentUpload = (props) => {
     const { handleFileChange, documents } = props;
     return (
         <form>
-            <FileInput component={FileInput} handleFileChange={ (e) => { handleFileChange(e)}} id="uploadButton" />
+            <FileInput handleFileChange={ (e) => { handleFileChange(e)}} id="uploadButton" />
             <div>{documents.length && renderImages(documents)}</div>
         </form>
     )
