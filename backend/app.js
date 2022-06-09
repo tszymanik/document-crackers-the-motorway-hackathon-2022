@@ -13,18 +13,26 @@ app.post('/v5c', async (req, res) => {
     if (req.headers['x-get-fake']) {
         return res.json(returnPostV5c());
     }
-    console.log('file uploaded', req.body);
-    await uploadDocument(req.body);
-    res.sendStatus(200);
+    try {
+        await uploadDocument(req.body);
+        res.sendStatus(200);
+    } catch (e) {
+        console.log('There was an error uploading file!', e);
+        res.sendStatus(500);
+    }
 })
 
 // Input only the filename, without prefix path
 app.get('/v5c/:id', async (req, res) => {
     if (req.headers['x-get-fake']) {
-        console.log('fake it till you make it')
         return res.json(returnGetV5cId());
     }
-    res.send(await getProcessedDocument(req.params.id));
+    try {
+        res.send(await getProcessedDocument(req.params.id));
+    } catch (e) {
+        console.log('There was a problem fetching filename', e);
+        res.sendStatus(404);
+    }
 });
 
 // Lists processed documents
@@ -32,7 +40,12 @@ app.get('/v5c', async (req, res) => {
     if (req.headers['x-get-fake']) {
         return res.json(returnGetV5c());
     }
-    res.send(await listProcessedDocuments());
+    try {
+        res.send(await listProcessedDocuments());
+    } catch (e) {
+        console.log('There was a problem listing files', e);
+        res.sendStatus(500);
+    }
 })
 
 app.listen(port, () => {
