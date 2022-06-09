@@ -10,10 +10,10 @@ export class ImagesService {
      */
 
     public uploadImage(payload: any): AxiosPromise {
-        return this.apiService.createRequest("POST", `/some-url`);
+        return this.apiService.createRequest("POST", `/v5c`);
     }
 
-    public getImage(id: string): AxiosPromise {
-        return this.apiService.createRequest("GET", `/some-url`);
-    }
+    // public getImage(id: string): AxiosPromise {
+    //     return this.apiService.createRequest("GET", `/some-url`);
+    // }
 }
