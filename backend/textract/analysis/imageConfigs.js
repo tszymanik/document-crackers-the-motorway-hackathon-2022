@@ -1,6 +1,26 @@
 const firstV5ImageConfigPage1 = {
   kind: 'v5',
   page: 1,
+  known: {
+    leftTop: {
+      text: 'UNITED KINGDOM',
+      x: 0.5833650231361389,
+      y: 0.033549413084983826,
+      polygonIndex: 0,
+    },
+    leftBottom: {
+      text: "THIS DOCUMENT IS NOT PROOF OF OWNERSHIP",
+      x: 0.12012216448783875,
+      y: 0.3365984559059143,
+      polygonIndex: 0,
+    },
+    rightBottom: {
+      text: "THIS DOCUMENT IS NOT PROOF OF OWNERSHIP",
+      x: 0.7952955961227417,
+      y: 0.3367244005203247,
+      polygonIndex: 1,
+    },
+  },
   staticValues: [
     {
       text: 'UNITED KINGDOM',
@@ -67,9 +87,9 @@ const firstV5ImageConfigPage2 = {
     },
     rightBottom: {
       text: 'Current UK address (house number, street name, town / city):',
-      x: 0.6544532179832458,
-      y: 0.7378516793251038,
-      polygonIndex: 1,
+      x: 0.4818858504295349,
+      y: 0.7162877321243286,
+      polygonIndex: 0,
     },
   },
   staticValues: [
@@ -190,6 +210,26 @@ const firstV5ImageConfigPage3 = {
 const secondV5ImageConfigPage1 = {
   kind: 'v5',
   page: 1,
+  known: {
+    leftTop: {
+      text: 'UNITED KINGDOM',
+      x: 0.606758713722229,
+      y: 0.10453621298074722,
+      polygonIndex: 0,
+    },
+    leftBottom: {
+      text: "THIS DOCUMENT IS NOT PROOF OF OWNERSHIP",
+      x: 0.22009965777397156,
+      y: 0.356924831867218,
+      polygonIndex: 0,
+    },
+    rightBottom: {
+      text: "THIS DOCUMENT IS NOT PROOF OF OWNERSHIP",
+      x: 0.7841819524765015,
+      y: 0.356924831867218,
+      polygonIndex: 1,
+    },
+  },
   staticValues: [
     {
       text: 'UNITED KINGDOM',
@@ -240,6 +280,27 @@ const secondV5ImageConfigPage1 = {
 const secondV5ImageConfigPage2 = {
   kind: 'v5',
   page: 2,
+  known: {
+    leftTop: {
+      text: 'Vehicle details',
+      x: 0.10862427949905396,
+      y: 0.08373246341943741,
+      polygonIndex: 0,
+    },
+    leftBottom: {
+      text: 'Change my vehicle details',
+      textFull: 'Change my vehicle details - Only fill in details to be corrected or changed',
+      x: 0.10741472989320755,
+      y: 0.43371859192848206,
+      polygonIndex: 0,
+    },
+    rightBottom: {
+      text: 'Current UK address (house number, street name, town / city):',
+      x: 0.4851617217063904,
+      y: 0.6791194081306458,
+      polygonIndex: 0,
+    },
+  },
   staticValues: [
     {
       text: 'Vehicle details',
@@ -358,6 +419,27 @@ const secondV5ImageConfigPage3 = {
 const thirdV5ImageConfigPage1 = {
   kind: 'v5',
   page: 1,
+  known: {
+    leftTop: {
+      text: 'UNITED KINGDOM',
+      x: 0.6854744553565979,
+      y: 0.14231938123703003,
+      polygonIndex: 0,
+    },
+    leftBottom: {
+      text: "THIS DOCUMENT IS NOT PROOF OF OWNERSHIP",
+      x: 0.2682826817035675,
+      y: 0.3305712342262268,
+      polygonIndex: 0,
+    },
+    rightBottom: {
+      text: "THIS DOCUMENT IS NOT PROOF OF OWNERSHIP",
+      x: 0.7951448559761047,
+      y: 0.3985622823238373,
+
+      polygonIndex: 1,
+    },
+  },
   staticValues: [
     {
       text: 'UNITED KINGDOM',
@@ -408,6 +490,29 @@ const thirdV5ImageConfigPage1 = {
 const thirdV5ImageConfigPage2 = {
   kind: 'v5',
   page: 2,
+  known: {
+    leftTop: {
+      text: 'Vehicle details',
+      x: 0.2265367954969406,
+      y: 0.06358601897954941,
+      polygonIndex: 0,
+    },
+    leftBottom: {
+      text: 'Change my vehicle details',
+      textFull: 'Change my vehicle details - Only fill in details to be corrected or changed',
+      x: 0.16535690426826477,
+      y: 0.39239513874053955,
+      polygonIndex: 0,
+    },
+    rightBottom: {
+      text: 'Current UK address (house number, street name, town / city):',
+      // x: 0.6544532179832458,
+      // y: 0.7378516793251038,
+      x: 0.44621846079826355,
+      y: 0.6659002304077148,
+      polygonIndex: 0,
+    },
+  },
   staticValues: [
     {
       text: 'Vehicle details',
