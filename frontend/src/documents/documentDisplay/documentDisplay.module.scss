@@ -1,0 +1,11 @@
+.documentImages {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    justify-content: center;
+  
+      img {
+          width: 150px;
+          height: 150px;
+      }
+}
