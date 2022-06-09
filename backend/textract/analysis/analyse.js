@@ -18,9 +18,8 @@ const interpolate = (f, xi) => {
 
 const equals = (a, b) => Math.abs(a - b) < 0.01;
 
-const analyze = (textractData, imageConfig) => {
-  const blocks = textractData.Blocks;
-  const diff = imageConfig.staticValues.map(reference => {
+const calcDiff = (blocks, imageConfig) => {
+  return imageConfig.staticValues.map(reference => {
     const extractedData = blocks.find(extracted => extracted.Text && extracted.Text.toUpperCase().startsWith(reference.text.toUpperCase()));
     return {
       reference,
@@ -34,6 +33,11 @@ const analyze = (textractData, imageConfig) => {
       }
     }
   })
+}
+
+const analyze = (textractData, imageConfig) => {
+  const blocks = textractData.Blocks;
+  const diff = calcDiff(blocks, imageConfig);
 
   const leftValuesList = diff.map(({ extraction, reference }) => ({ x: reference.left, y: extraction.left }))
   const topValuesList = diff.map(({ extraction, reference }) => ({ x: reference.top, y: extraction.top }))
@@ -59,5 +63,6 @@ const analyze = (textractData, imageConfig) => {
 }
 
 module.exports = {
-  analyze
+  analyze,
+  calcDiff,
 };
