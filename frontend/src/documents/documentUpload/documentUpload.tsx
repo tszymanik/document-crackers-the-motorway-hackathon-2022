@@ -23,7 +23,7 @@ const FileInput = React.forwardRef((props: IFileInputProps, ref: any): JSX.Eleme
           type="file"
         />
         <label htmlFor={id}>
-            {'submit document'}
+            {'Add Document'}
         </label>
       </div>
     );
