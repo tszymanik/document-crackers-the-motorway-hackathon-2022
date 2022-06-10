@@ -18,7 +18,7 @@ export class ImagesService {
     }
 
     public getImage(path: string): AxiosPromise {
-        return this.apiService.createRequest('GET', `/v5c/${path}`)
+        return this.apiService.createRequest('GET', `${path}`)
     }
 
 }

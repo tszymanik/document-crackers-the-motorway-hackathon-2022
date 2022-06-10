@@ -57,7 +57,7 @@ const DocumentDetails = (props: IDocumentDetailsProps) => {
                     {
                         Object.keys(single).map((key, index) => {
                             return (
-                                <p>
+                                <p key={`${key}-${index}`}>
                                     <span>{key}</span>
                                     <span>{JSON.stringify(single[key])}</span>
                                 </p>
@@ -68,11 +68,17 @@ const DocumentDetails = (props: IDocumentDetailsProps) => {
                     {/*    <img src={props.url} alt=""/>*/}
                     {/*)}*/}
 
-                    {image && (
-                        <img src={image.base64} alt=""/>
-                    )}
-                    {image && (
-                        <IlluminateBox leftTop={{x: 0, y:0}} rightBottom={{x: 1, y:1}} image={image.base64}/>
+                    {/*{image && !single.matches (*/}
+                    {/*    <img src={image.base64} alt=""/>*/}
+                    {/*)}*/}
+                    {image && single.matches && !!single.matches.length && (
+                        <IlluminateBox
+                            leftTop={{x: document[index]!.value!.Geometry!.Polygon[0].X, y: document[index]!.value!.Geometry!.Polygon[0].Y}}
+                            rightBottom={{x: document[index]!.value!.Geometry!.Polygon[2].X, y: document[index]!.value!.Geometry!.Polygon[2].Y}}
+                            // leftTop={{x: 0, y:0}}
+                            // rightBottom={{x: 1, y:1}}
+                            image={image.base64}
+                        />
                     )}
 
                     {/*{props.imagePath && (*/}

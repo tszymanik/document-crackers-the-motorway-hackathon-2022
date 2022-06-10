@@ -31,7 +31,7 @@ function App() {
             </div>
 
             {view === 'add' && (
-                <AddDocuments/>
+                <AddDocuments backToList={() => {setView('list')}}/>
             )}
             {view === 'list' && (
                 <DocumentsList goToDetails={(item: IUploadedDocumentOnList) => {

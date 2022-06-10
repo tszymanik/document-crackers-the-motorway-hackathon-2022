@@ -11,10 +11,10 @@ interface ICropImageProps {
 
 const defaultCrop: Crop = {
     unit: '%', // Can be 'px' or '%'
-    x: 25,
-    y: 25,
-    width: 50,
-    height: 50
+    x: 0,
+    y: 0,
+    width: 100,
+    height: 100
 }
 
 const CropImageModal = (props: ICropImageProps) => {

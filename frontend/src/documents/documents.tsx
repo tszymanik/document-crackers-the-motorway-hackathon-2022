@@ -5,8 +5,11 @@ import {IDocument} from "./document.model";
 import styles from "./documents.module.scss";
 import {ImagesService} from "../services/images.service";
 
+interface IDocProps {
+    backToList: () => void
+}
 
-const Documents = () => {
+const Documents = (props: IDocProps) => {
     const [documentState, setDocumentState] = useState<IDocument[]>([]);
     const imagesService: ImagesService = new ImagesService()
 
@@ -29,7 +32,7 @@ const Documents = () => {
 
                         imagesService.uploadImage(payload)
                             .then((r: any) => {
-                                alert('OK');
+                                props.backToList();
                                 setDocumentState([]);
                             })
                             .catch((e: any) => {

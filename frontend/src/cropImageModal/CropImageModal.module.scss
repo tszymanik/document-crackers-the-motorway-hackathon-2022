@@ -26,12 +26,15 @@
         height: 40vh;
         width: 80vw;
         background-color: #999999;
-        z-index: 3;
+        z-index: 10;
     }
 
     .button {
-        display: block;
-        z-index: 4;
+        position: absolute;
+        top: -40px;
+        left: 0;
+        //display: block;
+        //z-index: 4;
         @include buttonLook();
     }
 }
